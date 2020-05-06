@@ -1,10 +1,10 @@
-Bookmark App - Mandela J.
+## Bookmark App - Mandela J.
 
 An application to save important bookmarks
 
 Live link: https://thinkful-ei-orka.gihub.io/_________/
 
-User stories completed:
+### User stories completed:
 
 I can add bookmarks to my bookmark list. Bookmarks contain:
 -title
