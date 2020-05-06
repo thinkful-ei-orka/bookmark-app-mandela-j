@@ -1,15 +1,81 @@
- 
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
 
-
+h1 {
+  text-align: center;
+}
 body {
-background: url(images/lib_bkg_1280.jpg);
-font-family: 'Noto Sans KR', sans-serif;
-}all and (min-width: )
+background-image: url(../images/lib_bkg_1280.jpg);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+    text-align: center;
+    width: 300px;
+    height: auto;
+    background-color: rgba(255, 255, 255, .6);
+  border-radius: 12px;
+    /* margin: auto; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: safe center; */
+}
+
+@media (min-width: 900px;) {
+  main {
+    width: 900px;
+    height: auto;
+  };
+}
+
+button .add-bookmark-expand-button .filter-bookmarks-button {
+  display: inline-block;
+  width: 50%;
+  height: 30px;
+  border: none;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+button .add-bookmark-expand-button {
+  float: left;
+}
+button .filter-bookmarks-button {
+  float: right;
+}
+/* main *{
+  margin: auto;
+  background-color: rgba(255, 255, 255, .6);
+  height: auto;
+} */
+
+
+
+
+
+
+section .add-filter-bookmarks {
+  width: 100%;
+}
+
+
+
+
+section .bookmark-stack {
+  width: 100%;
+}
 
 .add-filter-forms {
     padding: ;
-    max-height: 0;
-    overflow: hidden;
+    max-height: scrollHeight px;
+    /* overflow: hidden; */
     transition: max-height 0.0s ease-out;
     background-color: ;
 }
@@ -17,7 +83,7 @@ font-family: 'Noto Sans KR', sans-serif;
 .content {
     padding: ;
     max-height: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: max-height 0.0s ease-out;
     background-color: ;
 }
@@ -25,3 +91,4 @@ font-family: 'Noto Sans KR', sans-serif;
 .title-div {
     cursor: pointer;
 }
+  </style>

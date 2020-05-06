@@ -3,7 +3,12 @@
 import store from './storeBM.js';
 import api from './api.js';
 
+// HTML Templates here
+ 
+
 function render() {
+    // api.grabBookmarks();
+
     if (store.addMode === false) {
 
     }
@@ -16,7 +21,7 @@ function render() {
 function toggleAddBookmark() {
     $('.add-bookmark-expand-button').click(e => {
         event.preventDefault();
-        store.toggleAddmode();
+        store.toggleAddMode();
         console.log('add bookmark expanded/collapsed');
         // turn store.addMode true
         store.toggleAddMode();
@@ -40,14 +45,20 @@ function filterByRating() {
 }
 
 function addBookmarkButton() {
-    $('.add-bookmark-button').on('submit', e => {
+    $('.add-bookmark-button').click('submit', e => {
         // why does this not prevent from submitting form/refreshing page?
         event.preventDefault();
         console.log('button press')
-
+        // const title = $('#js-add-bookmark-title').val();
+        // const rating = $('#js-site-rating').val();
+        // const url = $('#js-add-bookmark-url').val();
+        // const desc = $('#js-add-bookmark-description-').val();
         // validate form entry** confirm how
         // add form information to store
         // post method api call to server
+        // console.log(title, rating, url, desc);
+        // api.makeBookmark(title, url, desc, rating);
+        // api.makeBookmark(title, rating, url, desc)
         // render()
     })
     //
@@ -59,7 +70,15 @@ function expandBookmark() {
 
 
 function deleteBookmark() {
-
+    //figure why this isn't working
+    $('.bookmark-stack').on('click','.bookmark-div .', e => {
+    event.preventDefault();
+    console.log('delet button press');
+    // grab id from where clicked
+    // api.deleteBookmark(id)
+    // delete bookmark in store
+    // render()
+    })
 }
 
 
@@ -75,7 +94,7 @@ filterByRating();
 // expand bookmark
 // delete bookmark
 // show error
-//render()
+render()
 }
 
 $(bookmarkGo);

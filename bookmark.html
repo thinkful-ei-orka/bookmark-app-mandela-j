@@ -3,13 +3,12 @@
 
 <head>
   <title>Bookmark Your Sites</title>
-  <link rel="shortcut icon" href="#">
-<!--  Is this needed?-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="bookmark.css">
+  <!--  Is this needed?-->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"> -->
  <!--   Is this needed?  Yes, if you want a include a link to a specific font. You also need a CSS rules to 'specify your font family'-->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="bookmark.css">
 </head>
 
 <body>
@@ -20,6 +19,7 @@
       <main>
         
         <section class="add-filter-bookmarks">
+        <div class="expander-button-div">
         <button type="submit" class="add-bookmark-expand-button">Add Bookmark
         </button>
         <button type="submit" class="filter-bookmarks-button">Filter by Rating        
@@ -35,13 +35,14 @@
             </select>
           </form>-->
         </button>
+      </div>
         <section class="add-filter-forms">
           <form id="js-add-bookmark-form">
             <!-- Are labels needed for accessibility -->
             <!-- <label for="shopping-list-entry">Add an item</label> -->
-            <input type="text" name="add-bookmark-title" class="js-add-bookmark-entry title-input" placeholder="Title Here">
+            <input type="text" id="js-add-bookmark-title" name="add-bookmark-title" class="js-add-bookmark-entry title-input" placeholder="Title Here">
             <!-- <label for="shopping-list-entry">Add an item</label> -->
-            <select id="site-rating" name="add-bookmark-rating" class="js-add-bookmark-entry rating-input">
+            <select id="js-site-rating" name="add-bookmark-rating" class="js-add-bookmark-entry rating-input">
                 <option value="" selected disabled hidden>Rate Site</option>
                 <option value="1">&#9733; &#9734; &#9734; &#9734; &#9734;</option>
                 <option value="2">&#9733; &#9733; &#9734; &#9734; &#9734;</option>
@@ -50,9 +51,9 @@
                 <option value="5">&#9733; &#9733; &#9733; &#9733; &#9733;</option>
             </select>
             <!-- <label for="shopping-list-entry">Add an item</label> -->
-            <input type="text" name="add-bookmark-url" class="js-add-bookmark-entry url-input" placeholder="https://siteaddresshere.com/example">
+            <input type="text" id="js-add-bookmark-url" name="add-bookmark-url" class="js-add-bookmark-entry url-input" placeholder="https://siteaddresshere.com/example">
             <!-- <label for="shopping-list-entry">Add an item</label> -->
-            <input type="text" name="add-bookmark-description" class="js-add-bookmark-entry description-input" placeholder="Enter description here (optional)">
+            <input type="text" id="js-add-bookmark-description"name="add-bookmark-description" class="js-add-bookmark-entry description-input" placeholder="Enter description here (optional)">
             <button type="submit" class="add-bookmark-button">Add Bookmark</button>
 
         </form>
@@ -62,7 +63,7 @@
 
         <section class="bookmark-stack"> 
          <div class="bookmark-div">
-            <div class="title-div">
+            <div class="title-div content">
             <button>Title Rating     
             </button>
           <button class="btn"><i class="fa fa-trash"></i></button>
