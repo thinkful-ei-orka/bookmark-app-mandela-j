@@ -21,7 +21,7 @@ h1 {
 
 @media (min-width: 600px;) and (max-width:1199px;) {
     body {
-        background-image: url(../images/lib_bkg_1280.jpg);
+        background-image: url('../images/lib_bkg_1280.jpg');
 
     }
     main {
@@ -30,7 +30,7 @@ h1 {
   };
 } */
 body {
-    background-image: url(../images/lib_bkg_1920.jpg);
+    background-image: url('../images/lib_bkg_1920.jpg');
     background-position: center;
     background-attachment: fixed;
     margin: auto;
