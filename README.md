@@ -2,7 +2,7 @@
 
 An application to save important bookmarks
 
-Live link: https://thinkful-ei-orka.gihub.io/_________/
+Live link: https://thinkful-ei-orka.gihub.io/bookmark-app-mandela-j/
 
 ### User stories completed:
 
