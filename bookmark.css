@@ -30,7 +30,7 @@ h1 {
   };
 } */
 body {
-    background-image: url('../images/lib_bkg_1920.jpg');
+    background: url('../images/lib_bkg_1920.jpg');
     background-position: center;
     background-attachment: fixed;
     margin: auto;
