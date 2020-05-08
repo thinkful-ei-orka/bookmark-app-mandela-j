@@ -10,12 +10,14 @@ const store = {
     }
 }
 
+
+
 function toggleAddMode() {
     if (store.filterMode === true) {
         store.filterMode = !store.filterMode;
         store.addMode = !store.addMode;
     }
-    else {store.addMode = !store.addMode};
+    else {store.addMode = !store.addMode;}
 }
 
 function toggleFilterMode() {

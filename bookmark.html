@@ -3,6 +3,7 @@
 
 <head>
   <title>Bookmark Your Sites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="bookmark.css">
   <!--  Is this needed?-->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"> -->
@@ -22,21 +23,22 @@
         <div class="expander-button-div">
         <button type="submit" class="add-bookmark-expand-button">Add Bookmark
         </button>
-        <button type="submit" class="filter-bookmarks-button">Filter by Rating        
-        <!-- May need to insert form with dropdown as  
-        <form id="js-filter-bookmarks-form">
-          <select id="filter-rating" name="add-bookmark-rating" class="js-filter-bookmarks-select rating-input">
-                <option value="" selected disabled hidden>Filter by Rating</option>
+        <!-- <button type="submit" class="filter-bookmarks-button">Filter by Rating         -->
+        <!-- May need to insert form with dropdown as  -->
+        <form id="js-filter-bookmarks-form" class="filter-bookmarks-button">
+          <select id="filter-rating" name="add-bookmark-rating filter-bookmarks" class="js-filter-bookmarks-select">
+                <option value="0" selected disabled hidden>Filter by Rating</option>
                 <option value="1">&#9733; &#9734; &#9734; &#9734; &#9734;</option>
                 <option value="2">&#9733; &#9733; &#9734; &#9734; &#9734;</option>
                 <option value="3">&#9733; &#9733; &#9733; &#9734; &#9734;</option>
                 <option value="4">&#9733; &#9733; &#9733; &#9733; &#9734;</option>
                 <option value="5">&#9733; &#9733; &#9733; &#9733; &#9733;</option>
+                <option value="0">Reset</option>
             </select>
-          </form>-->
-        </button>
+          </form>
+        <!-- </button> -->
       </div>
-        <section class="add-filter-forms">
+        <section class="add-filter-forms content">
           <form id="js-add-bookmark-form">
             <!-- Are labels needed for accessibility -->
             <!-- <label for="shopping-list-entry">Add an item</label> -->
@@ -54,27 +56,13 @@
             <input type="text" id="js-add-bookmark-url" name="add-bookmark-url" class="js-add-bookmark-entry url-input" placeholder="https://siteaddresshere.com/example">
             <!-- <label for="shopping-list-entry">Add an item</label> -->
             <input type="text" id="js-add-bookmark-description"name="add-bookmark-description" class="js-add-bookmark-entry description-input" placeholder="Enter description here (optional)">
-            <button type="submit" class="add-bookmark-button">Add Bookmark</button>
+            <button type="submit" class="add-bookmark-button">Add</button>
 
         </form>
         </section>
       </section>
         
-
-        <section class="bookmark-stack"> 
-         <div class="bookmark-div">
-            <div class="title-div content">
-            <button>Title Rating     
-            </button>
-          <button class="btn"><i class="fa fa-trash"></i></button>
-          </a>
-         </div>
-          <div class="expanded-bookmark">
-            <p>URL</p>
-            <p>description</p>
-            <button class="visit-site-button">Visit Site</button>
-          </div>
-        </div>
+      <section class="bookmark-stack"> 
         </section>
 
       </main>

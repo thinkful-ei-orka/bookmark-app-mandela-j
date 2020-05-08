@@ -5,70 +5,149 @@
 
 h1 {
   text-align: center;
+  color: darkred;
+  font-size: 7vw;
 }
-body {
-background-image: url(../images/lib_bkg_1280.jpg);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+/* @media (min-width: 1600px;) {
+    body {
+        background-size: cover
 
-main {
-    text-align: center;
-    width: 300px;
-    height: auto;
-    background-color: rgba(255, 255, 255, .6);
-  border-radius: 12px;
-    /* margin: auto; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: safe center; */
-}
-
-@media (min-width: 900px;) {
-  main {
+    }
+/*    main {
     width: 900px;
     height: auto;
   };
 }
 
-button .add-bookmark-expand-button .filter-bookmarks-button {
-  display: inline-block;
-  width: 50%;
-  height: 30px;
+@media (min-width: 600px;) and (max-width:1199px;) {
+    body {
+        background-image: url(../images/lib_bkg_1280.jpg);
+
+    }
+    main {
+    width: 900px;
+    height: auto;
+  };
+} */
+body {
+    background-image: url(../images/lib_bkg_1920.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    margin: auto;
+}
+
+@media screen and (min-width:1000px) {
+body {
+    background-size: cover;
+}}
+
+
+main {
+    text-align: center;
+    width: 70%;
+    height: auto;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 12px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center
+}
+main *{
+    font-size: 2vw;
+}
+
+main > section.bookmark-stack{
+    flex-grow: 2;
+}
+button , .add-filter-forms {
+    background-color: transparent;
+    height: 100%;
+    display: inline-block;
+}
+
+#js-add-bookmark-description{
+    width: 100%;
+    /* set height according to screen */
+    height: 150px;    
+}
+.add-bookmark-expand-button, .filter-bookmarks-button, .title-rating-bookmark, .btn {
+  display: inline;
+  height: auto;
   border: none;
   color: black;
-  font-size: 16px;
   cursor: pointer;
   text-align: center;
 }
-button .add-bookmark-expand-button {
+
+.add-bookmark-expand-button, .filter-bookmarks-button, .add-bookmark-button {
+    width: 50%;
+}
+.visit-site-button {
+    width: 100%;
+    border-radius: 12px;
+}
+.title-rating-bookmark {
+    width: 85%;
+}
+.btn {
+    width: 15%;
+    position: relative;
+    /* top: 50%; */
+}
+
+a {
+    height: 100%;
+}
+i {
+    max-width: 100;
+}
+
+.add-bookmark-expand-button, .title-rating-bookmark, #js-add-bookmark-url {
   float: left;
 }
-button .filter-bookmarks-button {
+.filter-bookmarks-button, .btn {
   float: right;
 }
-/* main *{
-  margin: auto;
-  background-color: rgba(255, 255, 255, .6);
-  height: auto;
-} */
 
-
-
-
-
-
-section .add-filter-bookmarks {
-  width: 100%;
+.description {
+    text-align: left;
+    padding: 2%;
 }
 
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.contentShow {
+    max-height: content.scrollHeight px;
+    transition: max-height 0.2s ease-out;
+}
+.expanded-bookmark {
+    padding: 0 18px;
+}
+
+p {
+    max-width: 50%;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+}
+main *{
+  /* margin: auto; */
+  background-color: rgba(255, 255, 255, .9;
+
+}
+
+div .title-div {
+    width: 100%;
+  }
 
 
-
-section .bookmark-stack {
+.bookmark-stack {
   width: 100%;
 }
 
@@ -80,15 +159,8 @@ section .bookmark-stack {
     background-color: ;
 }
 
-.content {
-    padding: ;
-    max-height: 0;
-    /* overflow: hidden; */
-    transition: max-height 0.0s ease-out;
-    background-color: ;
-}
+
 
 .title-div {
     cursor: pointer;
 }
-  </style>

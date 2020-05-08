@@ -1,41 +1,54 @@
 'use strict';
 
+import store from './storeBM.js';
+import js from './bookmark.js';
+
 const baseUrl = 'https://thinkful-list-api.herokuapp.com/mj-app/bookmarks'
 
 function bookmarksFetch(...arg) {
     let error= false;
-    console.log(...arg);
     
     return fetch(...arg)
         .then(res => {
             if (!res.ok) {
-                error = {code: res.status};
-            }
+                error = {code: res.status};}
             return res.json()})
-        .then(resJson => console.log(resJson));
+        // .then(resJson => {
+        //     store.store.bookmarks.push(resJson);
+        //     console.log(store.store)
+        //     });
 }
 
 function grabBookmarks() {
     return bookmarksFetch(`${baseUrl}`)
-    // then place each object in store.bookmarks;
+    .then(resJson => {
+        store.store.bookmarks = resJson;
+        // js.render()
+        });
+
 }
 
 
-function makeBookmark(title, siteUrl, description, rating) {
-    const reqBody = JSON.stringify({title, siteUrl, description, rating})
+function makeBookmark(titlE, siteUrl, description, ratinG) {
+    const reqBody = JSON.stringify({title: titlE, url: siteUrl, desc: description, rating: ratinG})
+    console.log(reqBody)
     const options = {
         method : 'POST',
         headers : {'Content-Type' : "application/json"},
         body : reqBody
     }
-    return bookmarksfetch(`${baseUrl}/`, reqOptions)
-}
+    return bookmarksFetch(`${baseUrl}`, options)
+    .then(resJson => grabBookmarks())
+        }
 
-function deleteBookmark(id) {
+
+
+function deleteBookmark(idString) {
     const options = {
         method: 'DELETE',
     }
-    return bookmarksFetch(`${baseUrl}/${id}`, options)
+    return bookmarksFetch(`${baseUrl}/${idString}`, options)
+    .then(resJson => grabBookmarks())
     //then remove object from store.bookmarks;
 }
 
