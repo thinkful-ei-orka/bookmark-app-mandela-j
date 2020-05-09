@@ -66,8 +66,6 @@ function render() {
         
     }
 $('.bookmark-stack').html(bigBooks.join(''))
-// expandBookmark();
-// deleteBookmark();
 }
 
 function toggleAddBookmark() {
@@ -76,7 +74,7 @@ function toggleAddBookmark() {
         store.toggleAddMode();
         $('.add-filter-forms').toggleClass("content");
         $('.add-filter-forms').toggleClass("contentShow");
-        render()
+        render();
     });
 }
 
@@ -85,8 +83,8 @@ function filterByRating() {
         e.preventDefault();
         store.store.filterMode = $('.js-filter-bookmarks-select').val();
         console.log(store.store.filterMode)
-        api.grabBookmarks();
-        render()
+        api.grabBookmarks()
+        .then(function(){render();});
     })
 }
 
@@ -99,11 +97,10 @@ function addBookmarkButton() {
         const desc = $('.description-input').val();
         // validate form entry** confirm how
         // add form information to store
-        api.makeBookmark(title, url, desc, rating);
-        api.grabBookmarks();
-        render()
-    })
-}
+        api.makeBookmark(title, url, desc, rating)
+            .then(function (){
+                render();})
+    })}
 
 function expandBookmark() {
     $('.bookmark-stack').on('click', '.title-rating-bookmark', e => {
@@ -120,29 +117,25 @@ function deleteBookmark() {
     e.preventDefault();
     const id = $(e.target).attr("id");
     api.deleteBookmark(id);
-    api.grabBookmarks();
+    api.grabBookmarks()
+    .then(function(){render()});
     })
 }
 
-function bookmarkGo() {
-api.grabBookmarks();
-
-render();
+function evListenerBind() {
 // set event listeners
 toggleAddBookmark();
 addBookmarkButton();
-// filter bookmarks
 filterByRating();
-// expand bookmark
 expandBookmark();
-
 deleteBookmark();
 
 // show error
 }
 
-$(bookmarkGo);
+
 
 export default{
-    render
+    render,
+    evListenerBind
 }

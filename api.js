@@ -11,7 +11,8 @@ function bookmarksFetch(...arg) {
     return fetch(...arg)
         .then(res => {
             if (!res.ok) {
-                error = {code: res.status};}
+                error = {code: res.status};
+                console.log(res.status);}
             return res.json()})
         // .then(resJson => {
         //     store.store.bookmarks.push(resJson);
@@ -23,7 +24,6 @@ function grabBookmarks() {
     return bookmarksFetch(`${baseUrl}`)
     .then(resJson => {
         store.store.bookmarks = resJson;
-        // js.render()
         });
 
 }
