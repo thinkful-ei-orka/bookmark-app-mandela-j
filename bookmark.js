@@ -7,24 +7,30 @@ import api from './api.js';
 // HTML Templates here
 
 function ratingConverter(number) {
-   if (number === 1) {
-       return '&#9733; &#9734; &#9734; &#9734; &#9734;'}
+    console.log(store.store.bookmarks[number].rating)
+    switch (store.store.bookmarks[number].rating) {
+   case 1:
+       return '&#9733; &#9734; &#9734; &#9734; &#9734;';
+       break;
 
-   if (number === 2) {
-    return '&#9733; &#9733; &#9734; &#9734; &#9734;'}
-
-
-if (number === 3) {
-    return '&#9733; &#9733; &#9733; &#9734; &#9734;'}
-
-
-if (number === 4) {
-    return '&#9733; &#9733; &#9733; &#9733; &#9734;'}
+   case 2:
+        return '&#9733; &#9733; &#9734; &#9734; &#9734;';
+        break;
 
 
-if (number === 5) {
-    return '&#9733; &#9733; &#9733; &#9733; &#9733;'}
-}
+    case 3:
+        return '&#9733; &#9733; &#9733; &#9734; &#9734;'
+        break;
+
+
+    case 4:
+        return '&#9733; &#9733; &#9733; &#9733; &#9734;';
+        break;
+
+    case 5:
+        return '&#9733; &#9733; &#9733; &#9733; &#9733;';
+        break;
+}}
 
 function bookmarkDiv(i) {
     const storeOb = store.store.bookmarks[i]
@@ -46,27 +52,27 @@ return`<div class="bookmark-div contentShow" id="${storeOb.id}">
 
 function render() {
     let bigBooks = []
+    const filterMode = store.store.filterMode
     const newstack = store.store.bookmarks;
 
 
-    if (store.store.filterMode === false || store.store.filterMode === 0) {        newstack.forEach(function(bookmark,index){
+    if (filterMode === false || Number(filterMode) === 0) {newstack.forEach(function(bookmark,index){
         bigBooks.push(bookmarkDiv(index));
         });
     }
 
     else {
-        console.log(`1`)
-        function forfilter(i) {
-            const storeOb = store.store.bookmarks[i]
-            return storeOb.rating >=store.store.filterMode;
-            }
-        newstack.forEach(function(bookmark,index){
+        function filterTrue(bookmark){
+            return bookmark.rating >= Number(filterMode)}
+        const filteredStack = newstack.filter(filterTrue);
+        console.log(newstack);
+        console.log(filteredStack);
+        filteredStack.forEach(function(bookmark,index){
             bigBooks.push(bookmarkDiv(index));
-        });
-        
+        });    
     }
-$('.bookmark-stack').html(bigBooks.join(''))
-}
+
+$('.bookmark-stack').html(bigBooks.join(''))}
 
 function toggleAddBookmark() {
     $('.add-bookmark-expand-button').click(e => {
@@ -82,11 +88,9 @@ function filterByRating() {
     $('.js-filter-bookmarks-select').change(e => {
         e.preventDefault();
         store.store.filterMode = $('.js-filter-bookmarks-select').val();
-        console.log(store.store.filterMode)
-        api.grabBookmarks()
-        .then(function(){render();});
-    })
-}
+        console.log(store.store.filterMode);
+        render();});
+    }
 
 function addBookmarkButton() {
     $('.add-bookmark-button').click('submit', e => {
@@ -116,8 +120,7 @@ function deleteBookmark() {
     $('.bookmark-stack').on('click','.btn .fa', e => {
     e.preventDefault();
     const id = $(e.target).attr("id");
-    api.deleteBookmark(id);
-    api.grabBookmarks()
+    api.deleteBookmark(id)
     .then(function(){render()});
     })
 }
