@@ -56,7 +56,8 @@ function render() {
     const newstack = store.store.bookmarks;
 
 
-    if (filterMode === false || Number(filterMode) === 0) {newstack.forEach(function(bookmark,index){
+    if (filterMode === false || Number(filterMode) === 0) {
+        newstack.forEach(function(bookmark,index){
         bigBooks.push(bookmarkDiv(index));
         });
     }
