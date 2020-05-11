@@ -58,9 +58,9 @@ main *{
     font-size: 2vw;
 }
 
-main > section.bookmark-stack{
+/* main > section.bookmark-stack{
     flex-grow: 2;
-}
+} */
 button , .add-filter-forms {
     background-color: transparent;
     height: 100%;
@@ -68,9 +68,7 @@ button , .add-filter-forms {
 }
 
 #js-add-bookmark-description{
-    width: 100%;
-    /* set height according to screen */
-    height: 150px;    
+    width: 100%; 
 }
 .add-bookmark-expand-button, .filter-bookmarks-button, .title-rating-bookmark, .btn {
   display: inline;
@@ -89,11 +87,15 @@ button , .add-filter-forms {
     border-radius: 12px;
 }
 .title-rating-bookmark {
+    text-align: left;
     width: 85%;
 }
 .btn {
     width: 15%;
-    position: relative;
+    height: 100%;
+    /* display: ; */
+    margin: ;
+    /* position: relative; */
     /* top: 50%; */
 }
 
@@ -111,9 +113,9 @@ i {
   float: right;
 }
 
-.description {
+.description, .URL {
     text-align: left;
-    padding: 2%;
+    padding: 2px;
 }
 
 .content {
@@ -128,39 +130,41 @@ i {
     transition: max-height 0.2s ease-out;
 }
 .expanded-bookmark {
-    padding: 0 18px;
+    /* padding: 0 18px; */
 }
 
 p {
-    max-width: 50%;
-    overflow-wrap: anywhere;
-    word-wrap: break-word;
+    /* max-width: 50%; */
+    /* overflow-wrap: anywhere; */
+    /* word-wrap: break-word; */
 }
-main *{
-  /* margin: auto; */
-  background-color: rgba(255, 255, 255, .9;
 
+.error-display {
+    color: rgb(196, 21, 21);
 }
 
 div .title-div {
-    width: 100%;
+    display: block;
+    height: 50px;
+    cursor: pointer;
   }
 
 
 .bookmark-stack {
+    /* display: block; */
   width: 100%;
 }
 
+.bookmark-stack div {
+    display: block;
+}
+main *{
+  /* margin: auto; */
+  background-color: rgba(255, 255, 255, .9;
 .add-filter-forms {
     padding: ;
     max-height: scrollHeight px;
     /* overflow: hidden; */
     transition: max-height 0.0s ease-out;
     background-color: ;
-}
-
-
-
-.title-div {
-    cursor: pointer;
 }
